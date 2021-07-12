@@ -18,7 +18,8 @@ body {
 .player video {
   inline-size: 100%;
   aspect-ratio: 16/9;
- vertical-align: middle;
+  vertical-align: middle;
+  object-fit: cover;
 }
 
 
@@ -36,7 +37,7 @@ inset-inline-start: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2;
+  gap: 20px;
 }
 
 .player-progress{
@@ -44,12 +45,21 @@ inset-inline-start: 20px;
   inset-block-end : 0;
   inset-inline: 0 ;
   display: flex;
-  padding: 10px;
+  padding: 10px 15px;
 }
 .player-progress input{
   flex:  1;
 }
 
+.player-overlay{
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: .3s opacity;
+}
+.player:hover .player-overlay{
+  opacity: 1;
+}
 
 
 
